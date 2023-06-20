@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<packageId>kentington.saveourship2</packageId>
+	<packageId>dormoxx.sos2fork</packageId>
 	<author>Kentington, Thain, SonicTHI, Owlchemist</author>
-	<name>Save Our Ship 2</name>
-	<description>A comprehensive overhaul of spaceflight.</description>
+	<name>Sara Spacer</name>
+	<description>Sara Spacer from Save Our Ship 2</description>
 	<url/>
 	<supportedVersions>
 		<li>1.4</li>
@@ -15,11 +15,6 @@
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
-		<li>
-			<packageId>Murmur.WallLight</packageId>
-			<displayName>Wall Light</displayName>
-			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1423699208</steamWorkshopUrl>
-		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>brrainz.harmony</li>
@@ -28,25 +23,4 @@
 		<li>Ludeon.RimWorld.Ideology</li>
 		<li>Ludeon.RimWorld.Biotech</li>
 	</loadAfter>
-	<incompatibleWith>
-		<li>ceteam.combatextended</li>
-		<li>rwmt.multiplayer</li>
-		<li>automatic.gunplay</li>
-		<li>mlie.yayoscombat3</li>
-		<li>majorhoff.rimthreaded</li>
-		<li>user19990313777.runtimegc</li>
-		<li>erdelf.MinifyEverything</li>
-		<li>impassablemapmaker.kv.rw</li>
-		<li>lukakama.rimworldrealfow</li>
-		<li>merthsoft.designatorshapes</li>
-		<li>saakra.empire</li>
-		<li>automatic.traderships</li>
-		<li>VanillaExpanded.HelixienGas</li>
-		<li>windowsxp.realisticplanets</li>
-		<li>powerlunatic.flawlesselectronics</li>
-		<li>drzhivago.docworld</li>
-		<li>storm.sos2ex</li>
-		<!--rem after steam-->
-		<li>taranchuk.performanceoptimizer</li>
-	</incompatibleWith>
 </ModMetaData>
