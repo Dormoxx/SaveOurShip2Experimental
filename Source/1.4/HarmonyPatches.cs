@@ -26,7 +26,7 @@ namespace SaraSpacer
 					numComponents += 10;
 			}
 			num += componentCurve.Evaluate(numComponents);
-			//Log.Message("Sara Spacer calculates threat points should be " + wealthCurve.Evaluate(num) + " based on " + ResearchToWealth() + " research and " + numComponents + " component-based buildings");
+			Log.Message("Sara Spacer calculates threat points should be " + wealthCurve.Evaluate(num) + " based on " + ResearchToWealth() + " research and " + numComponents + " component-based buildings");
 			__result = wealthCurve.Evaluate(num);
 		}
 
