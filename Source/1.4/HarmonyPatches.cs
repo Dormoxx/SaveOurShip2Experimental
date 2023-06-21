@@ -15,7 +15,10 @@ namespace SaraSpacer
 		public static void Postfix(Map __instance, ref float __result)
 		{
 			if (Find.Storyteller.def != ResourceBank.StorytellerDefOf.Sara)
-				return;
+            {
+                Log.Message("Unable to find Sara Storyteller Def! Returning...");
+                return;
+            }
 			float num = ResearchToWealth();
 			int numComponents = 0;
 			foreach (Building building in __instance.listerBuildings.allBuildingsColonist.Where(b => b.def.costList != null))
