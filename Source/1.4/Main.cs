@@ -14,15 +14,11 @@ namespace SaraSpacer
         {
             var harmony = new Harmony("dormoxx.sos2fork");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            if (Prefs.DevMode)
-            {
-                Log.Message(
-                    string.Format("Sara Spacer: successfully completed {0} harmony patches!", 
-                    harmony.GetPatchedMethods().Select(
-                        new Func<MethodBase, Patches>(Harmony.GetPatchInfo)).SelectMany((Patches p) => p.Prefixes.Concat(p.Postfixes)).Count((Patch p) => p.owner.Contains(harmony.Id))
-                    )
-                 );
-            }
+            Log.Message(string.Format("Sara Spacer: successfully completed {0} harmony patches!", 
+                harmony.GetPatchedMethods().Select(
+                    new Func<MethodBase, Patches>(Harmony.GetPatchInfo)).SelectMany((Patches p) => p.Prefixes.Concat(p.Postfixes)).Count((Patch p) => p.owner.Contains(harmony.Id))
+                )
+             );
         }
     }
 }

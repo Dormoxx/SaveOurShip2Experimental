@@ -15,11 +15,9 @@ namespace SaraSpacer
 		public static void Postfix(Map __instance, ref float __result)
 		{
 			if (Find.Storyteller.def != ResourceBank.StorytellerDefOf.Sara)
-            {
-                Log.Message("Unable to find Sara Storyteller Def! Returning...");
                 return;
-            }
-			float num = ResearchToWealth();
+
+			float num = ResearchToWealthApparentCost();
 			int numComponents = 0;
 			foreach (Building building in __instance.listerBuildings.allBuildingsColonist.Where(b => b.def.costList != null))
 			{
@@ -29,21 +27,30 @@ namespace SaraSpacer
 					numComponents += 10;
 			}
 			num += componentCurve.Evaluate(numComponents);
-			Log.Message("Sara Spacer calculates threat points should be " + wealthCurve.Evaluate(num) + " based on " + ResearchToWealth() + " research and " + numComponents + " component-based buildings");
+			//Log.Message("Sara Spacer calculates threat points should be " + wealthCurve.Evaluate(num) + " based on " + ResearchToWealthBaseCost() + " research and " + numComponents + " component-based buildings");
 			__result = wealthCurve.Evaluate(num);
 		}
 
-		static float ResearchToWealth()
-		{
-			float num = 0;
-			foreach (ResearchProjectDef proj in DefDatabase<ResearchProjectDef>.AllDefs)
-			{
-				if (proj.IsFinished)
-					num += proj.baseCost;
-			}
-			if (num > 100000)
-				num = 100000;
-			return num;
-		}
-	}
+        static float ResearchToWealthBaseCost(){
+            float num = 0;
+            foreach (ResearchProjectDef proj in DefDatabase<ResearchProjectDef>.AllDefs){
+                if (proj.IsFinished)
+                        num += proj.baseCost;
+            }
+            if (num > 100000)
+                num = 100000;
+            return num;
+        }
+        static float ResearchToWealthApparentCost(){
+            float num = 0;
+            foreach (ResearchProjectDef proj in DefDatabase<ResearchProjectDef>.AllDefs)
+            {
+                if (proj.IsFinished)
+                    num += proj.CostApparent;
+            }
+            if (num > 100000)
+                num = 100000;
+            return num;
+        }
+    }
 }
